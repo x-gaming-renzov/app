@@ -40,7 +40,7 @@ def temp_callback(dialuge_dict, depth, dialogue_container):
 
 if gen:
     dialogue_container = st.empty()
-    dialoufe_tree = GetDialougeTree(personality, description, background, depth, end_goal)
+    dialoufe_tree = GetDialougeTree(personality, description, background, depth)
     dialoufe_tree = json.loads(dialoufe_tree)
     print(dialoufe_tree)
     img = getMermaid(dialoufe_tree)
