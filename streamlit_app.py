@@ -52,7 +52,7 @@ if gen:
     pil_img = Image.open("output.png")
     wd, ht = pil_img.size
     dialogue_container.image(pil_img, width=wd)
-    status.update('Is it good?', state="complete")
+    status.update(label='Is it good?', state="complete")
 
 
 
