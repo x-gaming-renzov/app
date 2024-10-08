@@ -1,6 +1,6 @@
 
 
-def get_dialogue_promt(npc_name, npc_description, npc_backstory, npc_personality, npc_last_wish, depth):
+def get_dialogue_promt(npc_personality, npc_description, npc_backstory, depth):
     DIALOGUE_PROMT = f"""
 Context: 
 In a game where the player acts as a sub-deity responsible for helping souls fulfill their last wishes before they move on to the afterlife, the player encounters a soul that is stuck in the mortal realm due to unfinished business.
@@ -9,11 +9,9 @@ The player is the only one capable of assisting them in completing their final w
 The player spends time with these souls, listens to their stories, and helps them find closure and move on.
 
 NPC is:
-Name: {npc_name}
 Description: {npc_description}
 Backstory: {npc_backstory}
 Personality: {npc_personality}
-NPC's last wish is: {npc_last_wish}
 
 Generate a dialogue tree with a depth of {depth}.
 
