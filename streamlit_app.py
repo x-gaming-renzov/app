@@ -40,18 +40,18 @@ def temp_callback(dialuge_dict, depth, dialogue_container):
 
 if gen:
     status = st.status('Generating Dialogue Tree...')
-    status.update(label='Brewing good stuff...')   
+    status.update(label='Planting seeds...')   
     dialogue_container = st.empty()
     dialoufe_tree = GetDialougeTree(personality, description, background, depth)
     dialoufe_tree = json.loads(dialoufe_tree)
-    status.update(label='Smells good, Let me serve you...')
+    status.update(label='Watering tree..')
     print(dialoufe_tree)
     img = getMermaid(dialoufe_tree)
     with open("output.png", "wb") as image_file:
         image_file.write(img)
     pil_img = Image.open("output.png")
     wd, ht = pil_img.size
-    status.update(label='Is it good?', state="complete")
+    status.update(label='Enjoy the shade :)', state="complete")
     like, dislike, download = dialogue_container.columns(3)
     download.download_button('Download', img, file_name='dialogue_tree.png')
     st.image(pil_img, width=wd)
