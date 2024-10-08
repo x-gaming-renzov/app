@@ -37,7 +37,7 @@ def generate_diagram(plantuml_code):
 
 def GetDialougeTree(personality, description, background, depth):
     llm = LLM.LLM()
-    prompt = prompts.get_dialogue_promt(personality, description, background, personality, depth)
+    prompt = prompts.get_dialogue_promt(personality, description, background, depth)
     response = llm.send_message(prompt, model='gpt-4o')
     return response
 
