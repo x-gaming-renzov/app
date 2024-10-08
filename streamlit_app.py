@@ -53,8 +53,6 @@ if gen:
     wd, ht = pil_img.size
     status.update(label='Is it good?', state="complete")
     like, dislike, download = dialogue_container.columns(3)
-    like.button('Like')
-    dislike.button('Dislike')
     download.download_button('Download', img, file_name='dialogue_tree.png')
     st.image(pil_img, width=wd)
 
