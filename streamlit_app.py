@@ -39,9 +39,13 @@ def temp_callback(dialuge_dict, depth, dialogue_container):
             temp_callback(player_dialogue[choice], depth+1, dialogue_container)
 
 if gen:
+    status = st.status('Generating Dialogue Tree...')
+    status.update(label='Brewing good stuff...')   
     dialogue_container = st.empty()
     dialoufe_tree = GetDialougeTree(personality, description, background, depth)
     dialoufe_tree = json.loads(dialoufe_tree)
+    status.update(label='Smells good...')
+    status.update(label='Let me serve you...')
     print(dialoufe_tree)
     img = getMermaid(dialoufe_tree)
     with open("output.png", "wb") as image_file:
@@ -49,6 +53,7 @@ if gen:
     pil_img = Image.open("output.png")
     wd, ht = pil_img.size
     dialogue_container.image(pil_img, width=wd)
+    status.upccess('Is it good?', state="complete")
 
 
 
