@@ -53,5 +53,5 @@ def getMermaid(data):
             image_file.write(img)
         return img
     except Exception as e:
-        print("Error generating Mermaid diagram:")
+        print("Error generating Mermaid diagram:" , e)
         return getMermaid(data)
