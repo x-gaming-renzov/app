@@ -44,8 +44,7 @@ if gen:
     dialogue_container = st.empty()
     dialoufe_tree = GetDialougeTree(personality, description, background, depth)
     dialoufe_tree = json.loads(dialoufe_tree)
-    status.update(label='Smells good...')
-    status.update(label='Let me serve you...')
+    status.update(label='Smells good, Let me serve you...')
     print(dialoufe_tree)
     img = getMermaid(dialoufe_tree)
     with open("output.png", "wb") as image_file:
@@ -53,7 +52,7 @@ if gen:
     pil_img = Image.open("output.png")
     wd, ht = pil_img.size
     dialogue_container.image(pil_img, width=wd)
-    status.upccess('Is it good?', state="complete")
+    status.update('Is it good?', state="complete")
 
 
 
